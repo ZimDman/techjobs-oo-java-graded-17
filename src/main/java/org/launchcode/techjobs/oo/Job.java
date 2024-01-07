@@ -32,6 +32,10 @@ public class Job {
 
     @Override
     public String toString() {
+
+
+
+
         String space = System.lineSeparator();
 
         if (name == null || name.isEmpty()) {
@@ -50,7 +54,7 @@ public class Job {
             coreCompetency = new CoreCompetency("Data not available");
         }
 
-        /*if (name.equals( "Data not available") &&
+        if (name.equals( "Data not available") &&
                 employer.getValue().equals("Data not available") &&
                 location.getValue().equals("Data not available") &&
                 positionType.getValue().equals("Data not available") &&
@@ -58,11 +62,13 @@ public class Job {
 
             return space + "ID: " + id + space +
                     "OOPS! this job does not seem to exist." + space;
-        }*/
-
-        return space + "ID: " + id + space + "Name: " + name + space + "Employer: " + employer + space +
+        }
+        return "\n" + "ID: " + id + "\n" + "Name: " + name + "\n" + "Employer: " +
+               employer + "\n" + "Location: " + location + "\n" + "Position Type: " +
+               positionType + "\n" + "Core Competency: " + coreCompetency + "\n";
+        /*return space + "ID: " + id + space + "Name: " + name + space + "Employer: " + employer + space +
              "Location: " + location + space + "Position Type: " + positionType + space +
-             "Core Competency: " + coreCompetency + space;
+             "Core Competency: " + coreCompetency + space;*/
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields

@@ -42,6 +42,7 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job test_job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
         assertFalse(test_job1.equals(test_job2));
     }
 
@@ -85,7 +86,7 @@ public class JobTest {
 
     }
 
-   /* @Test
+    @Test
     public void testToStringHandlesIDOnly() {
         Job test_job = new Job();
 
@@ -96,5 +97,5 @@ public class JobTest {
                 "OOPS! this job does not seem to exist." + space,test_string);
 
 
-    }*/
+    }
 }
