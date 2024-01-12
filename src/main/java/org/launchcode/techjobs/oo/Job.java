@@ -33,9 +33,6 @@ public class Job {
     @Override
     public String toString() {
 
-
-
-
         String space = System.lineSeparator();
 
         if (name == null || name.isEmpty()) {
