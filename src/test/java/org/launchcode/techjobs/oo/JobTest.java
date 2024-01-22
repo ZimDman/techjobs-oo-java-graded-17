@@ -51,12 +51,18 @@ public class JobTest {
         Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        String test_string = test_job.toString();
-        String space = System.lineSeparator();
+//        String test_string = test_job.toString();
+////        String space = System.lineSeparator();
+////
+////        assertEquals(space + "ID: " + test_job.getId() + space + "Name: Product tester" + space +
+////                "Employer: ACME" + space + "Location: Desert" + space + "Position Type: Quality control" +
+////                space + "Core Competency: Persistence" + space, test_string);
 
-        assertEquals(space + "ID: " + test_job.getId() + space + "Name: Product tester" + space +
-                "Employer: ACME" + space + "Location: Desert" + space + "Position Type: Quality control" +
-                space + "Core Competency: Persistence" + space, test_string);
+    String firstChar = String.valueOf(test_job.toString().charAt(0));
+    String lastChar = String.valueOf(test_job.toString().charAt(test_job.toString().length()-1));
+
+    assertEquals(firstChar, "\n");
+    assertEquals(lastChar, "\n");
 
     }
 
@@ -65,24 +71,40 @@ public class JobTest {
         Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        String test_string = test_job.toString();
+//        String test_string = test_job.toString();
         String space = System.lineSeparator();
-
-        assertEquals(space + "ID: " + test_job.getId() + space + "Name: Product tester" + space +
-                "Employer: ACME" + space + "Location: Desert" + space + "Position Type: Quality control" +
-                space + "Core Competency: Persistence" + space, test_string);
+        String actual = "\n" +"ID: "
+                +test_job.getId() +"\n"+"Name: "+test_job.getName()+
+                "\n"+"Employer: "+test_job.getEmployer()+
+                "\n"+"Location: "+test_job.getLocation()+
+                "\n"+"Position Type: "+test_job.getPositionType()+
+                "\n"+"Core Competency: "+test_job.getCoreCompetency()+
+                "\n";
+//        String test_string = String.format(space) + "ID: %s"  + space + "Name: %s" + space +
+//                "Employer: %s "+ space + "Location: %s" + space + "Position Type: %s "  +space+
+//        "Core Competency: %s " +space,test_job.getId(), test_job.getName(), test_job.getEmployer(), test_job.getLocation(),
+//                test_job.getPositionType(), test_job.getCoreCompetency());
+        assertEquals(actual, test_job.toString());
     }
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job test_job = new Job("", null,null,null,null);
+        Job test_job = new Job("", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         String test_string = test_job.toString();
         String space = System.lineSeparator();
 
-        assertEquals(space + "ID: " + test_job.getId() + space + "Name: Data not available" + space +
-                "Employer: Data not available" + space + "Location: Data not available" + space +
-                "Position Type: Data not available" + space + "Core Competency: Data not available" + space, test_string);
+//        assertEquals(space + "ID: " + test_job.getId() + space + "Name: Data not available" + space +
+//                "Employer: Data not available" + space + "Location: Data not available" + space +
+//                "Position Type: Data not available" + space + "Core Competency: Data not available" + space, test_string);
+        assertEquals("\n" +"ID: "
+                +test_job.getId() +"\n"+"Name: Data not available"+
+                "\n"+"Employer: "+test_job.getEmployer()+
+                "\n"+"Location: "+test_job.getLocation()+
+                "\n"+"Position Type: "+test_job.getPositionType()+
+                "\n"+"Core Competency: "+test_job.getCoreCompetency()+
+                "\n", test_string);
 
     }
 

@@ -59,13 +59,14 @@ public class Job {
 
             return space + "ID: " + id + space +
                     "OOPS! this job does not seem to exist." + space;
+        } else {
+            return "\n" + "ID: " + id + "\n" + "Name: " + name + "\n" + "Employer: " +
+                    employer + "\n" + "Location: " + location + "\n" + "Position Type: " +
+                    positionType + "\n" + "Core Competency: " + coreCompetency + "\n";
         }
-        return "\n" + "ID: " + id + "\n" + "Name: " + name + "\n" + "Employer: " +
-               employer + "\n" + "Location: " + location + "\n" + "Position Type: " +
-               positionType + "\n" + "Core Competency: " + coreCompetency + "\n";
-        /*return space + "ID: " + id + space + "Name: " + name + space + "Employer: " + employer + space +
-             "Location: " + location + space + "Position Type: " + positionType + space +
-             "Core Competency: " + coreCompetency + space;*/
+//        return space + "ID: " + id + space + "Name: " + name + space + "Employer: " + employer + space +
+//             "Location: " + location + space + "Position Type: " + positionType + space +
+//             "Core Competency: " + coreCompetency + space;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
